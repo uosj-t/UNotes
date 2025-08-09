@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "data_structures.html",
+    "href": "data_structures.html",
+    "title": "Data Structures 👨‍💻",
+    "section": "",
+    "text": "Laboratories 💻\nEven numbers to the left on a python list 🔄 | Lab1"
+  },
+  {
+    "objectID": "lab1.html",
+    "href": "lab1.html",
+    "title": "Even numbers to the left on a python list 🔄",
+    "section": "",
+    "text": "The lab 1 from Data Structures Class at Externado University of Colombia proposed a problem to practice recursion as an introduction to further concepts in the class.\n\n🎯 The Challenge\nGiven any L list with a lenght of 2 or more, the task is to arrange all the even numbers to the left side of the list.\n\n\n🛠️ The Method\nFor this to happen the solution adds two additional pointers that traverse the list from left to right comparing and swapping the numbers based on a set of two conditions.\n\nFinally, this notebook present the number of steps to order the list, which refers to how many times a swap between numbers is made.\n\nimport numpy as np\nnumber = 808314897\nnp.random.seed(number)\nL = np.random.randint(1,number//2,number)\n\n\ndef pares_izquierda(L):\n    def low_high(L,low,high):\n        if low == high:\n            return L \n        elif L[low]%2==0:\n            return low_high(L,low+1,high)\n        elif L[low]%2!=0:\n            L[low], L[high] = L[high], L[low]\n            return low_high(L,low,high-1)\n    return low_high(L,0,len(L)-1)\n\n\ndef pares_izquierda_counter(L):\n    def low_high(L,low,high):\n        if low == high:\n            return 0\n        elif L[low]%2==0:\n            return low_high(L,low+1,high)\n        elif L[low]%2!=0:\n            L[low], L[high] = L[high], L[low] \n            return 1 + low_high(L,low,high-1)\n    return low_high(L,0,len(L)-1)\n\n\nL = [2,8,3,1,2,1,4,9,4]\npares_izquierda(L)\n\n[2, 8, 4, 4, 2, 1, 9, 1, 3]\n\n\n\npares_izquierda_counter(L)\n\n3"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Joshua Trujillo 👨‍💻",
+    "section": "",
+    "text": "Joshua is currently a Data Science student at Externado University of Colombia 🎓. His non-academic interests include reading 📖 and watching movies 🎬.\n\nData Science\n2025-II: Data Structures 🔗\n\n\nContact\n📧 joshua.trujillo@est.uexternado.edu.co"
+  }
+]
