@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Joshua Trujillo">
-<meta name="dcterms.date" content="2025-08-09">
 
-<title>lab1 – Joshua Trujillo</title>
+<title>Joshua Samad Trujillo Lagos – Joshua Trujillo</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -104,6 +102,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -120,7 +147,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Even numbers to the left on a python list 🔄</h1>
+<h1 class="title"><strong>Joshua Samad Trujillo Lagos</strong></h1>
 </div>
 
 
@@ -128,12 +155,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-title-meta">
 
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">August 09, 2025</p>
-    </div>
-  </div>
   
     
   </div>
@@ -143,61 +164,163 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>The lab 1 from <strong>Data Structures Class</strong> at <strong>Externado University of Colombia</strong> proposed a problem to practice <strong>recursion</strong> as an introduction to further concepts in the class.</p>
-<section id="the-challenge" class="level1">
-<h1>🎯 The Challenge</h1>
-<p>Given any <strong>L list</strong> with a lenght of 2 or more, the task is to arrange all the even numbers to the left side of the list.</p>
-</section>
-<section id="the-method" class="level1">
-<h1>🛠️ The Method</h1>
-<p>For this to happen the solution adds two additional <strong>pointers</strong> that traverse the list from <strong>left</strong> to <strong>right</strong> comparing and swapping the numbers based on a set of two conditions.</p>
 <hr>
-<p>Finally, this notebook present the number of steps to order the list, which refers to how many times a swap between numbers is made.</p>
-<div id="554953e9" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>number <span class="op">=</span> <span class="dv">808314897</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>np.random.seed(number)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>L <span class="op">=</span> np.random.randint(<span class="dv">1</span>,number<span class="op">//</span><span class="dv">2</span>,number)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Correo</strong>: <em>joshua.trujillo@est.uexternado.edu.co</em> <strong>Telefono</strong>: <em>3023164710</em></p>
+<hr>
+<p><em>Acorde a lo indicado, se elabora el día 30/08/2025 a las 9:22.</em></p>
+<section id="examen-parcial-práctico---primer-corte" class="level1">
+<h1><strong>Examen Parcial Práctico - Primer Corte</strong></h1>
+<p><em>Probabilidad - Ciencia de Datos</em></p>
+<section id="instrucciones" class="level2">
+<h2 class="anchored" data-anchor-id="instrucciones"><strong>Instrucciones</strong> 📜</h2>
+<ul>
+<li><em>Esta corresponde a la parte práctica del examen parcial del primer corte. Deben trabajar en los grupos de trabajo que ustedes definieron</em></li>
+<li>La solución la deben realizar en R-Studio empleando un archivo R-Markdown para generar un html. Lo que deben entregar es el archivo html, de la manera en la que han entregado trabajos anteriores.</li>
+<li>Tienen hasta el sábado 30 de agosto para realizar la entrega. Entrega un estudiante por grupo.</li>
+<li>Para las ecuaciones que realicen deben emplear LaTeX, las cuentas las hacen empleando R.</li>
+<li>Al realizar todos los ejercicios de manera adecuada, se puede obtener un total de 92 puntos. Los ejercicios tienen la puntuación, esta depende de la cantidad de procesos necesarios para solucionar lo indicado.</li>
+<li>Obtendrán 8 puntos adicionales por entrega a tiempo, siguiendo las instrucciones, con buena presentación y sin errores de ortografía y/o gramática. Fallar en alguno de estos aspectos, causará pérdida de algunos o de todos estos puntos, dependiendo la cantidad de fallos.</li>
+</ul>
+<section id="base-de-datos" class="level3">
+<h3 class="anchored" data-anchor-id="base-de-datos">Base de datos 📊</h3>
+<p><em>Carguen la base de datos <code>APARTAMENTOS.csv</code>.</em></p>
+<p>Con el proposito de cumplir esta instrucion, destinamos nuestro tiempo a <em>conocer</em> y <em>reportar</em>, las distintas maneras de cargar una “Base de datos” a R, usando R-Studio, Google Colab <em>Cambiando entorno de ejecucion</em> y/o demás herramientas que permitar la lectura y modificacion de archivos csv, tsv y demás.</p>
+</section>
+</section>
+<section id="usando-la-función-read.csv" class="level2">
+<h2 class="anchored" data-anchor-id="usando-la-función-read.csv"><strong>Usando la función read.csv()</strong></h2>
+<p>La función read.csv() hace parte del conjunto de funciones que conforman el paquete estandar de metodos dentro de R.</p>
+<p>Este comando nos permite leer archivos CSV de acuerdo a lo indicado en el proyecto.</p>
+<p>A su vez ejecutando <em>?read.csv</em> podemos verificar las distintas instrucciones destinadas a la comprensión del metodo escritas por los desarrolladores del mismo. El caracter <em>?</em> establece el retorno textual de lo que hace la función.</p>
+<p><em>Ejecutando, podemos verificar:</em></p>
+<div id="bfb1cb7c" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;vscode&quot;,&quot;value&quot;:{&quot;languageId&quot;:&quot;r&quot;}}">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Verifiquemos ahora las intrucciones que nos da ? sobre la funcion read.csv</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>?<span class="fu">read.csv</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="f15948b5" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> pares_izquierda(L):</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> low_high(L,low,high):</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> low <span class="op">==</span> high:</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> L </span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> L[low]<span class="op">%</span><span class="dv">2</span><span class="op">==</span><span class="dv">0</span>:</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> low_high(L,low<span class="op">+</span><span class="dv">1</span>,high)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> L[low]<span class="op">%</span><span class="dv">2</span><span class="op">!=</span><span class="dv">0</span>:</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>            L[low], L[high] <span class="op">=</span> L[high], L[low]</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> low_high(L,low,high<span class="op">-</span><span class="dv">1</span>)</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> low_high(L,<span class="dv">0</span>,<span class="bu">len</span>(L)<span class="op">-</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><em>Podemos verificar distintas instrucciones argumentales que recibe la funcion de acuerdo a su uso intendido</em></p>
+<p>Consequente a lo dicho, cargamos la base de datos usando read.csv()</p>
+<div id="7aB-alTpFhu4" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;vscode&quot;,&quot;value&quot;:{&quot;languageId&quot;:&quot;r&quot;}}">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Establecemos data como el lugar objetivo donde nuestra base de datos reposara</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"APARTAMENTOS(in).csv"</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="d442e570" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> pares_izquierda_counter(L):</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> low_high(L,low,high):</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> low <span class="op">==</span> high:</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="dv">0</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> L[low]<span class="op">%</span><span class="dv">2</span><span class="op">==</span><span class="dv">0</span>:</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> low_high(L,low<span class="op">+</span><span class="dv">1</span>,high)</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> L[low]<span class="op">%</span><span class="dv">2</span><span class="op">!=</span><span class="dv">0</span>:</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>            L[low], L[high] <span class="op">=</span> L[high], L[low] </span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="dv">1</span> <span class="op">+</span> low_high(L,low,high<span class="op">-</span><span class="dv">1</span>)</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> low_high(L,<span class="dv">0</span>,<span class="bu">len</span>(L)<span class="op">-</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="estadística-descriptiva" class="level1">
+<h1>Estadística descriptiva 📈</h1>
+<p><em>Considere la variable <code>terminado</code>. Esta hace referencia a si el apartamento está en obra gris, en cuyo caso la categoría que representa es <code>no</code>, o si está terminado en cuyo caso la categoría es <code>si</code>.</em></p>
+<section id="tabla-de-frecuencia" class="level2">
+<h2 class="anchored" data-anchor-id="tabla-de-frecuencia">Tabla de frecuencia</h2>
+<p>(<strong>6 puntos</strong>) Elabore, empleando las técnicas vistas en clase, una tabla de frecuencia de esta variable.</p>
+<ol start="2" type="1">
+<li>(<strong>5 puntos</strong>) Elabore un gráfico de barras para representar la información que encontró en la tabla de frecuencia. Ponga un título y nombres adecuados a los ejes y diferentes colores a las barras, esto de acuerdo con lo estudiado en clase. 3. (<strong>2 puntos</strong>) Escriba una interpretación del gráfico mencionando cuál es el hallazgo hecho y las cantidades de las dos categorías. 4. (<strong>4 puntos</strong>) Elabore un gráfico de pastel en el que represente la frecuencia porcentual encontrada. Ponga un título adecuado y agregue las etiquetas correspondientes, de acuerdo con lo visto en clase. 5. (<strong>2 puntos</strong>) Escriba una interpretación del gráfico anterior, mencione los porcentajes encontrados.</li>
+</ol>
+<div id="bf19ec96" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;vscode&quot;,&quot;value&quot;:{&quot;languageId&quot;:&quot;r&quot;}}">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a> <span class="fl">2.</span>  (<span class="sc">**</span><span class="dv">5</span> puntos<span class="sc">**</span>) Elabore un gráfico de barras para representar la información que encontró en la tabla de frecuencia. Ponga un título y nombres adecuados a los ejes y diferentes colores a las barras, esto de acuerdo con lo estudiado en clase.</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="fl">3.</span>  (<span class="sc">**</span><span class="dv">2</span> puntos<span class="sc">**</span>) Escriba una interpretación del gráfico mencionando cuál es el hallazgo hecho y las cantidades de las dos categorías.</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="fl">4.</span>  (<span class="sc">**</span><span class="dv">4</span> puntos<span class="sc">**</span>) Elabore un gráfico de pastel en el que represente la frecuencia porcentual encontrada. Ponga un título adecuado y agregue las etiquetas correspondientes, de acuerdo con lo visto en clase.</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="fl">5.</span>  (<span class="sc">**</span><span class="dv">2</span> puntos<span class="sc">**</span>) Escriba una interpretación del gráfico anterior, mencione los porcentajes encontrados.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="91400d7d" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>L <span class="op">=</span> [<span class="dv">2</span>,<span class="dv">8</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">9</span>,<span class="dv">4</span>]</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>pares_izquierda(L)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="9">
-<pre><code>[2, 8, 4, 4, 2, 1, 9, 1, 3]</code></pre>
+<div id="5f4NB_LpMtP5" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;vscode&quot;,&quot;value&quot;:{&quot;languageId&quot;:&quot;r&quot;}}">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>frecuency_table <span class="ot">&lt;-</span> <span class="fu">table</span>(data<span class="sc">$</span>terminado)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>frecuencia_relativa <span class="ot">&lt;-</span> <span class="fu">prop.table</span>(frecuency_table)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>frecuencia_porcentual <span class="ot">&lt;-</span> frecuencia_relativa <span class="sc">*</span> <span class="dv">100</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>tabla</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="4X3qFx1hN6TK" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;vscode&quot;,&quot;value&quot;:{&quot;languageId&quot;:&quot;r&quot;}}">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="0XLpf2M6OpW5" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;vscode&quot;,&quot;value&quot;:{&quot;languageId&quot;:&quot;r&quot;}}" data-outputid="0701e0c6-4287-434c-c88a-41a26d0ffe05">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>frequency_df <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(frecuency_terminado)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(frequency_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Var1 Freq
+1   no  102
+2   si  592</code></pre>
 </div>
 </div>
-<div id="066d9709" class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>pares_izquierda_counter(L)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="10">
-<pre><code>3</code></pre>
-</div>
-</div>
+<section id="estadística-descriptiva-1" class="level3">
+<h3 class="anchored" data-anchor-id="estadística-descriptiva-1">3 Estadística descriptiva 📈</h3>
+<ol type="1">
+<li><p>Considere la variable <code>terminado</code>. Esta hace referencia a si el apartamento está en obra gris, en cuyo caso la categoría que representa es <code>no</code>, o si está terminado en cuyo caso la categoría es <code>si</code>.</p>
+<ol type="1">
+<li><p>(<strong>6 puntos</strong>) Elabore, empleando las técnicas vistas en clase, una tabla de frecuencia de esta variable.</p></li>
+<li><p>(<strong>5 puntos</strong>) Elabore un gráfico de barras para representar la información que encontró en la tabla de frecuencia. Ponga un título y nombres adecuados a los ejes y diferentes colores a las barras, esto de acuerdo con lo estudiado en clase.</p></li>
+<li><p>(<strong>2 puntos</strong>) Escriba una interpretación del gráfico mencionando cuál es el hallazgo hecho y las cantidades de las dos categorías.</p></li>
+<li><p>(<strong>4 puntos</strong>) Elabore un gráfico de pastel en el que represente la frecuencia porcentual encontrada. Ponga un título adecuado y agregue las etiquetas correspondientes, de acuerdo con lo visto en clase.</p></li>
+<li><p>(<strong>2 puntos</strong>) Escriba una interpretación del gráfico anterior, mencione los porcentajes encontrados.</p></li>
+</ol></li>
+<li><p>Considere la variable <code>mt2</code>, esta corresponde al área de los apartamentos en metros cuadrados.</p>
+<ol type="1">
+<li>(<strong>12 puntos</strong>) Si se desea realizar un histograma, determine el número de clases que serían necesarias empleando las reglas empírica, de Sturges, de Scott y de Freedman-Diaconis.
+<ul>
+<li>Escriba la fórmula correspondiente en cada caso.</li>
+<li>Haga el cálculo del resultado usando R.</li>
+<li>Verifique usando la función correspondiente en los últimos tres casos.</li>
+</ul></li>
+<li>(<strong>4 puntos</strong>) Empleando la función <code>fdt</code> del paquete <code>fdth</code> genere la tabla de frecuencia de la variable <code>mt2</code> usando la cantidad de clases que indicó la regla de <strong>Sturges</strong>. Usando esta tabla, responda las siguientes preguntas:
+<ul>
+<li>¿En qué rango se encuentra el 87.6% de las propiedades que menos área tienen?</li>
+<li>¿Qué cantidad de apartamentos están en este rango?</li>
+<li>¿Cuántos apartamentos tienen una área mayor a 461 metros cuadrados?</li>
+</ul></li>
+<li>(<strong>7 puntos</strong>) Elabore un histograma de frecuencia absoluta:
+<ul>
+<li>empleando la cantidad de clases que indica la Regla de Sturges.</li>
+<li>Escriba título y nombres de los ejes adecuadamente.</li>
+<li>Ajuste las dimensiones de los ejes <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span>.</li>
+<li>Imprima las cantidades de cada clase sobre la barra correspondiente.</li>
+<li>Use un color diferente al que se genera por defecto.</li>
+<li>Ajuste las etiquetas del eje <span class="math inline">\(x\)</span> de modo que correspondan a las clases empleadas.</li>
+<li>Escriba un análisis del gráfico obtenido en el que enfatice en el rango del área en el que hay más departamentos y los tres rangos que tienen menor frecuencia.</li>
+</ul></li>
+<li>(<strong>4 puntos</strong>) Calcule la media y la mediana. ¿Qué indica la diferencia entre los dos valores? Explique haciendo referencia al histograma que realizó.</li>
+<li>(<strong>3 puntos</strong>) Determine el valor de la moda usando la función <code>mlv</code> del paquete <code>modeest</code>. Luego emplee la composición adecuada de las funciones <code>head</code>, <code>sort</code> y <code>table</code> de modo que muestre de manera descendente los 5 valores que más se repiten y cuántas veces sale cada uno. Interprete el valor de la moda como una tendencia, para ello responda ¿Qué se espera que ocurra con el valor de la moda cuando se tome una muestra de la población de apartamentos de Medellín?</li>
+<li>(<strong>4 puntos</strong>) Determine la desviación estándar. para el caso de los apartamentos de Medellín ¿Cuál es el intervalo en el que están por lo menos el 88% y hasta aproximadamente el 99.7% de las áreas?</li>
+<li>(<strong>7 puntos</strong>) Empleando la función <code>summary</code> genere el resumen de los cinco números.
+<ul>
+<li>¿Cuál es el área para la cual están por debajo el 75% de los apartamentos que tienen menor área?</li>
+<li>Determine el IQR.</li>
+<li>Calcule el límite superior. ¿Hay datos atípicos? justifique su respuesta comparando el límite superior con el máximo.</li>
+<li>Ilustre los hallazgos anteriores generando el boxplot correspondiente. Ponga un título y nombre al eje <span class="math inline">\(y\)</span> adecuado. Ponga etiquetas a los cuartiles y bigotes en el boxplot.</li>
+<li>Use un filtro y la función <code>length</code> para determinar cuántos apartamentos tienen áreas atípicas y mostrar los valores de estas áreas.</li>
+</ul></li>
+</ol></li>
+</ol>
+<hr>
+</section>
+<section id="técnicas-básicas-de-conteo" class="level3">
+<h3 class="anchored" data-anchor-id="técnicas-básicas-de-conteo"><strong>4</strong> Técnicas básicas de conteo 🔢</h3>
+<ol type="1">
+<li><p>(<strong>5 puntos</strong>) Considere la variable <code>estrato</code>. Si una constructora desea realizar proyectos en cada uno de los estratos, de modo que elegirá un apartamento de cada uno para convertirlo en un super apartamento de lujo que usará como airbnb. ¿De cuántas maneras puede elegir los apartamentos la constructora?</p></li>
+<li><p>(<strong>12 puntos</strong>) Los apartamentos de la base de datos se dividen en 7 zonas, estas se pueden revisar en la variable <code>ubicación</code>. Una emisora de la ciudad va a realizar un concurso entre estas 7 zonas para premiar la mejor decoración navideña. A las tres primeras zonas se les dará como premio un concierto de fin de año. La que quede de primeras tendrá artistas internacionales, la segunda artistas nacionales y la tercera artistas locales.</p>
+<ol type="1">
+<li>¿De cuántas maneras puede quedar el podio? Exprese esta cantidad usando la fórmula de permutaciones o combinaciones según corresponda, y realice su cálculo usando R.</li>
+<li>Use la función que corresponda del paquete <code>gtools</code> para mostrar explícitamente todas las posibilidades.</li>
+<li>Si se va a elegir un comité formado por 3 de las zonas para que supervisen que el concurso sea justo, ¿de cuántas maneras se puede elegir ese comité? Exprese esta cantidad usando la fórmula de permutaciones o combinaciones según corresponda, y realice su cálculo usando R.</li>
+<li>Use la función que corresponda del paquete <code>gtools</code> para mostrar explícitamente todas las posibilidades.</li>
+</ol></li>
+</ol>
+<hr>
+</section>
+<section id="probabilidad" class="level3">
+<h3 class="anchored" data-anchor-id="probabilidad"><strong>5</strong> Probabilidad 🤔</h3>
+<ol type="1">
+<li><p>(<strong>15 puntos</strong>) Considere el experimento de elegir tres zonas de manera aleatoria para formar el comité que vigile el concurso.</p>
+<ol type="1">
+<li>¿Cuál es el espacio muestral? Indique cuántos elementos tiene.</li>
+<li>Considere el evento <span class="math inline">\(A:= \text{El Poblado hace parte del comité}.\)</span> Dé tres ejemplos de subconjuntos del espacio muestral en los que ocurre el evento <span class="math inline">\(A\)</span>.</li>
+<li>¿De cuántas maneras puede ocurrir el evento <span class="math inline">\(A\)</span>?</li>
+<li>Usando el enfoque de la probabilidad frecuentista, determine la probabilidad de ocurrencia de <span class="math inline">\(A\)</span>.</li>
+<li>Considere la familia de subconjuntos <span class="math display">\[\mathcal{F}=\{\emptyset, \{\text{poblado, centro, norte}\}, \{\text{aburra s, belen g, occidente, laureles}\}, \Omega\}\]</span> ¿Es <span class="math inline">\(\mathcal{F}\)</span> una <span class="math inline">\(\sigma\)</span>-álgebra sobre <span class="math inline">\(\Omega\)</span>? Justifique mencionando las propiedades.</li>
+</ol></li>
+</ol>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
